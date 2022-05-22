@@ -19,8 +19,8 @@
 <style scoped>
 .main-section-index {
     display: grid;
-    height: 100%;
-    grid-template-columns: minmax(720px, 50%) auto;
+    height: auto;
+    grid-template-columns: minmax(800px, 50%) auto;
     grid-template-rows: 100%;
     overflow: hidden;
 }
@@ -41,11 +41,9 @@
     border-radius: 50%;
     animation: rotacionPlaneta 50s infinite linear;
 }
-
 @keyframes rotacionPlaneta {
     0%{ background-position: 0px;}
-    100% {background-position: 1387px;}
-    
+    100% {background-position: 1387px;}    
 }
 .shadow{
     border-radius: 50%;
@@ -70,7 +68,6 @@
     animation: movimientoAstronauta 35s infinite linear;
 
 }
-
 @keyframes movimientoAstronauta {
     20% {
         transform: translate(-4rem, 3rem) scale(2) rotateZ(30deg) scaleX(-1);
@@ -93,4 +90,42 @@
     }
 
 }
+
+@media screen and (max-width: 1250px) {
+    .main-section-index{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .planeta{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        }
+        .main-section-index .planeta .planeta-marte{
+            width: 600px;
+            height: 600px;
+        }
+        .main-section-index .planeta .planeta-marte .shadow{
+            width: 603px;
+            height: 603px;
+        }
+    .astronauta{
+        position: relative;
+    }
+}
+@media screen and (max-width:750px) {
+    .main-section-index .planeta .planeta-marte{
+        width: 320px;
+        height: 320px;
+    }
+    .main-section-index .planeta .planeta-marte .shadow{
+        width: 322px;
+        height: 322px;
+    }
+}
+
 </style>
