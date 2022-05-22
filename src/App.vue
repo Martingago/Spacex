@@ -1,30 +1,31 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+<Menuweb></Menuweb>
   <router-view/>
+  <div class="background"></div>
+  <Index></Index>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script setup>
+import Menuweb from '@/components/Menuweb.vue';
+import Index from '@/views/Index.vue'
+require ("@/assets/css/format.css")
 
-nav {
-  padding: 30px;
+</script>
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+<style>
+.background{
+  position: fixed;
+  background-image: url("@/assets/img/espacio-nebulosa-background.png");
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+} 
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#app{
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr;
 }
 </style>
