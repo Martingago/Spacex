@@ -2,7 +2,7 @@
 <form action="#" id="my-form">
     <input type="text" placeholder="Nombre" id="input-nombre" required>
     <input type="email" name="Email" id="input-email" required placeholder="E-mail">
-    <input type="text" name="asunto" id="input-asunto" placeholder="Asunto">
+    <input type="text" name="asunto" id="input-asunto" required placeholder="Asunto">
     <textarea name="texto" id="input-texto" cols="30" rows="10" placeholder="Mensaje"></textarea>
     <input type="submit" value="Enviar" id="btn-submit">
 </form>
@@ -19,39 +19,48 @@
     width: 90vw;
     max-width: 600px;
     margin: auto;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border-radius: 5px;
-    background-color: rgb(102, 70, 105 , .3);
+    /* background-color: black; */
+    border:2px solid rgba(255,255,255, .6);
     backdrop-filter: blur(1px);
-    box-shadow: 4px 4px 10px lightgray;
 }
-
-input{
+input[type=text], input[type=email]{
     border: none;
     font-size: 1.3rem;
-    border-radius: 5px;
-    padding: .5rem 1rem;
-    background-color: rgba(255,255,255, .6);
+    line-height: 1.2rem;
+    border-radius: 0px;
+    padding: .1rem 0;
+    background-color: transparent;
     color: white;
+    border-bottom: 3px solid rgba(255,255,255, .6);
+    transition: border .3s linear;
 }
-input:focus{
+input[type=text]:hover, input[type=email]:hover{
+    border-bottom: 3px solid white;
+}
+input[type=text]:focus, input[type=email]:focus, input[type=text]:valid, input[type=email]:valid{
     outline: none;
-    background-color: rgba(255,255, 255 , .5);
+    border-bottom: 3px solid rgb(179, 8, 119);
 }
+
+
 textarea{
     resize: none;
     outline: none;
     border: none;
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 1.3rem;
-    padding: .5rem 1rem;
+    padding: .5rem 0;
     font-style: normal;
-    background-color: rgba(255,255,255, .6);
+    background-color: transparent;
     color: white;
+    border-bottom: 3px solid rgba(255,255,255, .4)
 }
 textarea:focus{
     outline: none;
-    background-color: rgba(255,255, 255 , .5);
+    background-color: transparent;
+    border-bottom: 3px solid rgb(179, 8, 119);
 }
 
 #input-asunto, #input-texto{
@@ -64,12 +73,16 @@ textarea:focus{
     width: fit-content;
     padding: .5rem 1rem;
     font-size: 1.5rem;
+    background-color: transparent;
     cursor: pointer;
     transition: all .2s linear;
+    border: none;
+    color:  rgba(255,255,255, .6);
+    border-bottom: 3px solid rgba(255,255,255, .6)
 }
 #btn-submit:hover{
-    transform: scale(1.05);
-    box-shadow: 0px 0px 8px 2px darkgray;
+    color: white;
+    border-bottom: 3px solid white;
 }
 
 

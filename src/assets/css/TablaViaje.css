@@ -28,7 +28,7 @@
 
 .planeta-viaje-selector .planeta {
     margin: auto;
-    position: absolute;
+    /* position: absolute; */
     width: 100%; 
 }
 
@@ -44,17 +44,21 @@
     background-size: cover;
     animation: rotacionPlaneta 60s infinite linear;  
     border-radius: 50%;
+    -webkit-box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
+    -moz-box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
+    box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
 }
 .planeta-viaje-selector .marte::after {
+    content: "";
     width: 100%;
     padding-bottom: 100%;
     border-radius: 47%;
     background-image: url("@/assets/img/nubes-planeta-marte.png");
     background-size: contain;
-    transform: scale(1.1);
     -webkit-box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
     -moz-box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
     box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
+    
     animation: rotacionNubes 20s infinite linear;
 }
 
