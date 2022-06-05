@@ -1,0 +1,337 @@
+.section-viaje-selector {
+    display: grid;
+    grid-template-columns: minmax(200px, 500px) 500px;
+    grid-template-rows: auto 1fr;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+    gap: 4rem 6rem;
+}
+
+.tittle-section-viaje {
+    grid-column: 1 / 3;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    margin: 0 1rem;
+}
+
+/* PLANETAS*/
+.planeta-viaje-selector {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.planeta-viaje-selector .planeta {
+    margin: auto;
+    position: absolute;
+    width: 100%; 
+}
+
+.planeta-viaje-selector .planeta::after {
+    content: "";
+    display: block;
+}
+
+/* marte */
+.planeta-viaje-selector .marte {
+    background-image: url("@/assets/img/mars-texture-map-ajustada.jpg");
+    background-position: 0%;
+    background-size: cover;
+    animation: rotacionPlaneta 60s infinite linear;  
+    border-radius: 50%;
+}
+.planeta-viaje-selector .marte::after {
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: 47%;
+    background-image: url("@/assets/img/nubes-planeta-marte.png");
+    background-size: contain;
+    transform: scale(1.1);
+    -webkit-box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
+    -moz-box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
+    box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
+    animation: rotacionNubes 20s infinite linear;
+}
+
+/* luna */
+.planeta-viaje-selector .luna {
+    background-image: url("@/assets/img/luna-texture-map.jpg");
+    background-position: 20%;
+    background-size: fill;
+    border-radius: 50%;
+}
+    .planeta-viaje-selector .luna::after{
+        width: 100%;
+    padding-bottom: 100%;
+    border-radius: 47%;
+        -webkit-box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
+    -moz-box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
+    box-shadow: inset -50px -35px 35px 30px rgba(0, 0, 0, .955);
+    }
+
+/* Estacion espacial */
+.planeta-viaje-selector .est-espacial{
+    background-image: url("@/assets/img/estacion-espacial.png");
+    background-size: cover;
+    animation: movimientoEstacion 20s infinite linear;
+    /* position: relative; */
+}
+.planeta-viaje-selector .est-espacial::after{
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+    .planeta-viaje-selector .est-espacial .astronauta{
+        position: absolute;
+        width: 120px;
+        top: 50%;
+        right: 50%;
+        animation: movimientoAstronauta 20s infinite linear;
+        transform: scaleX(-1);
+    }
+
+
+@keyframes rotacionNubes {
+    0% {
+        transform: scale(1.1) rotateZ(0deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotateZ(25deg);
+    }
+
+    100% {
+        transform: scale(1.1) rotateZ(0deg);
+    }
+
+}
+
+@keyframes rotacionPlaneta {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 67%;
+    }
+}
+
+@keyframes movimientoEstacion {
+    0%{
+        transform: scale(1);
+    }
+    50%{transform: scale(.7) rotateZ(20deg);}
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes movimientoAstronauta {
+    20% {
+        transform: translate(-2rem, 2rem) scale(2) rotateZ(20deg) scaleX(-1);
+    }
+
+    35% {
+        transform: translate(-1.5rem, -1.5rem) scale(1.2) rotateZ(0deg) scaleX(-1);
+    }
+
+    65% {
+        transform: translate(2rem, 4rem) scale(1) rotateZ(-20deg) scaleX(-1);
+    }
+
+    80% {
+        transform: translate(2.5rem, -3rem) scale(.8) rotateZ(-40deg) scaleX(-1);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1) rotateZ(0deg) scaleX(-1);
+    }
+
+}
+
+.component-viaje-selector {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+    max-width: 500px;
+    gap: 2.5rem;
+    z-index: 1;
+}
+
+/* Selector viaje */
+.nav-viaje {
+    width: 100%;
+    max-width: 500px;
+}
+
+.nav-viaje ul {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.nav-viaje .selector-viaje {
+    color: white;
+    background-color: transparent;
+    width: fit-content;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-bottom: 4px solid transparent;
+    transition: all .3s linear;
+    border-radius: 0px;
+    cursor: pointer
+}
+
+.nav-viaje .selector-viaje:hover {
+    color: lightgray
+}
+
+.nav-viaje .selected {
+    transition: all .3s linear;
+    border-bottom: 4px solid white;
+}
+
+/* Tabla del viaje */
+.section-table-planetas {
+    width: 100%;
+    height: 500px;
+}
+
+.tabla-viaje-info {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+
+.tabla-viaje-info .tittle {
+    font-size: 4rem;
+    line-height: 4rem;
+    color: white;
+    letter-spacing: .25rem;
+    margin-bottom: .5rem;
+    transform: scaleY(1.4);
+}
+
+.tabla-viaje-info .description {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: white;
+
+}
+
+.tabla-viaje-info hr {
+    width: 100%;
+    height: .1rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+.table-statics {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: auto;
+    gap: 3rem;
+}
+
+.table-statics .statics {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.statics h3 {
+    color: white;
+    font-size: .9rem;
+    line-height: 1.2rem;
+    text-transform: uppercase;
+}
+
+.statics p {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+@media screen and (max-width: 1080px) {
+    .section-viaje-selector {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        justify-content: center;
+        gap: 2rem;
+        width: 90%;
+        margin: auto;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .component-viaje-selector{
+        width: auto;
+    }
+        .component-viaje-selector .tabla-viaje-info{
+            position: relative;
+        }
+
+    .tittle-section-viaje{
+        grid-column: 1 / 2;
+    }
+    .planeta-viaje-selector{
+        width: 100%;
+        position: relative;
+        max-width: 600px;
+        height: fit-content;
+    }
+
+    .planeta-viaje-selector .planeta {
+        position: absolute;
+        width: 80%; 
+        margin-left: 1rem;
+    }
+    
+    .planeta-viaje-selector .planeta::after {
+        content: "";
+        display: block;
+    }
+    .planeta-viaje-selector .est-espacial .astronauta{
+        display: none;
+    }
+}
+
+@media screen  and (max-width: 600px){
+    .nav-viaje .selector-viaje{
+        font-size: .9rem;
+    }
+    .section-viaje-selector{
+        width: 100%;
+        gap: 1rem;
+    }
+    .component-viaje-selector{
+        width: auto;
+        max-width: 100%;
+        padding: 1rem;
+    }
+    .section-table-planetas .tittle{
+        font-size: 2.6rem;
+    }
+    .section-table-planetas .description{
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+    .section-table-planetas .table-statics .statics p{
+        font-size: 1.3rem;
+    }
+    
+}
