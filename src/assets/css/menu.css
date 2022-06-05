@@ -35,10 +35,10 @@
         justify-content: center;
         align-items: center;
         width: auto;
-        height: .2rem;
+        height: .1rem;
         border: none;
         margin: auto 1rem;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.3);
     }
 
     .main-menu .navegation-menu {
@@ -146,7 +146,7 @@
         align-self: center;
         width: auto;
         margin: auto 2rem;
-        height: .2rem;
+        height: .1rem;
         border: none;
         background-color: white;
     }
