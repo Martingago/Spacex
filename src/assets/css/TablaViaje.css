@@ -215,6 +215,7 @@
     gap: 1rem;
     width: 100%;
     max-width: 500px;
+    transition: all .3s linear;
 }
 
 

@@ -11,15 +11,13 @@
 <style scoped>
 
 
-
 #my-form{
     display: grid;
     grid-template-columns: auto auto;
     gap: .75rem;
-    width: 90vw;
-    max-width: 600px;
+    width: auto;
     margin: auto;
-    padding: 1rem 2rem;
+    padding: .5rem 1rem;
     border-radius: 5px;
     /* background-color: black; */
     border:2px solid rgba(255,255,255, .6);
@@ -83,6 +81,22 @@ textarea:focus{
 #btn-submit:hover{
     color: white;
     border-bottom: 3px solid white;
+}
+
+@media screen and (max-width: 900px) {
+    #my-form{
+        width: 90%;
+        max-width: 500px;
+        grid-template-columns: auto;
+        margin: auto;
+        padding: .5rem 1rem;
+    }
+    #input-asunto, #input-texto{
+    grid-column: 1 / 2;
+}
+#btn-submit{
+    grid-column: 1 / 2;
+}
 }
 
 
